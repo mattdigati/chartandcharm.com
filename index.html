@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chart & Charm – Dental Printables for Professionals</title>
+<meta name="description" content="Shop printable dental forms, patient education posters, and office décor designed for dental professionals. Instant download on Etsy.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────────────────── */
+:root {
+  --navy:       #1a2744;
+  --navy-mid:   #243358;
+  --blue:       #4e85be;
+  --blue-soft:  #7aadd4;
+  --sky:        #d8edf8;
+  --sky-light:  #eef6fc;
+  --cream:      #f7f5f1;
+  --warm-white: #fdfcfa;
+  --gold:       #b8934a;
+  --gold-light: #d4b07a;
+  --text:       #1e2d4a;
+  --muted:      #677898;
+  --border:     rgba(26,39,68,0.09);
+}
+
+/* ── RESET ───────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--warm-white);
+  color: var(--text);
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── UTILITY ─────────────────────────────────────────── */
+.serif { font-family: 'Cormorant Garamond', serif; }
+.eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px; height: 1px;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+/* ── ANIMATIONS ──────────────────────────────────────── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50%       { transform: translateY(-8px) rotate(-2deg); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px;
+  background: rgba(253,252,250,0.88);
+  backdrop-filter: blur(18px) saturate(1.4);
+  border-bottom: 1px solid var(--border);
+  animation: fadeDown 0.7s ease both;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.nav-logo em { font-style: normal; color: var(--blue); }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+  font-weight: 400;
+}
+.nav-links a:hover { color: var(--navy); }
+
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 22px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+}
+.nav-cta:hover {
+  background: var(--navy-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(26,39,68,0.18);
+}
+.nav-cta svg { width: 12px; height: 12px; transition: transform 0.2s; }
+.nav-cta:hover svg { transform: translateX(3px); }
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  padding: 120px 56px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Diagonal sky background on right */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 52%; height: 100%;
+  background: linear-gradient(160deg, var(--sky-light) 0%, var(--sky) 60%, #c2dff2 100%);
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 0;
+}
+
+/* Subtle dot grid texture */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle, rgba(26,39,68,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-left {
+  position: relative; z-index: 1;
+  animation: fadeUp 1s ease 0.15s both;
+}
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px;
+  background: rgba(78,133,190,0.1);
+  border: 1px solid rgba(78,133,190,0.25);
+  border-radius: 40px;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 28px;
+}
+.hero-tag-dot {
+  width: 6px; height: 6px;
+  background: var(--blue);
+  border-radius: 50%;
+  position: relative;
+}
+.hero-tag-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--blue);
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+  font-weight: 300;
+  line-height: 1.06;
+  color: var(--navy);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--blue);
+  font-weight: 300;
+}
+.hero h1 strong {
+  font-weight: 600;
+  font-style: normal;
+  color: var(--navy);
+}
+
+.hero-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 420px;
+  margin-bottom: 44px;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 32px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transition: left 0.4s;
+}
+.btn-primary:hover::before { left: 100%; }
+.btn-primary:hover {
+  background: var(--navy-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(26,39,68,0.22);
+}
+.btn-primary svg { width: 14px; height: 14px; transition: transform 0.2s; }
+.btn-primary:hover svg { transform: translateX(4px); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid var(--navy);
+  transition: all 0.2s;
+}
+.btn-ghost:hover { color: var(--blue); border-color: var(--blue); gap: 14px; }
+
+/* Hero Stats Strip */
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 52px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+.hero-stat {}
+.hero-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-stat-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Hero Right — floating cards */
+.hero-right {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  height: 520px;
+  animation: fadeIn 1s ease 0.5s both;
+}
+
+.card-stack {
+  position: relative;
+  width: 320px; height: 400px;
+}
+
+.hcard {
+  position: absolute;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(26,39,68,0.13);
+}
+
+.hcard-main {
+  width: 260px; height: 320px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float 7s ease-in-out infinite;
+  z-index: 3;
+  border: 1px solid rgba(26,39,68,0.05);
+}
+
+.hcard-back1 {
+  width: 220px; height: 280px;
+  top: 20px; left: -20px;
+  transform: rotate(-6deg);
+  animation: floatSlow 9s ease-in-out infinite 0.5s;
+  z-index: 2;
+  background: var(--sky);
+  box-shadow: 0 16px 48px rgba(26,39,68,0.09);
+}
+
+.hcard-back2 {
+  width: 200px; height: 260px;
+  bottom: 10px; right: -30px;
+  transform: rotate(5deg);
+  animation: floatSlow 8s ease-in-out infinite 1.2s;
+  z-index: 2;
+  background: var(--navy);
+  box-shadow: 0 16px 48px rgba(26,39,68,0.18);
+}
+
+.hcard-inner {
+  padding: 28px 24px;
+  height: 100%;
+  display: flex; flex-direction: column;
+}
+
+.hcard-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.hcard-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.hcard-lines { margin-bottom: auto; }
+.hline {
+  height: 5px;
+  background: var(--sky);
+  border-radius: 3px;
+  margin-bottom: 7px;
+}
+.hline:nth-child(2) { width: 78%; }
+.hline:nth-child(3) { width: 60%; }
+.hline:nth-child(4) { width: 85%; }
+
+.hcard-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.hcard-badge {
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hcard-icon {
+  width: 28px; height: 28px;
+  background: var(--sky);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+}
+
+/* Dark card internals */
+.hcard-back2 .hcard-label { color: var(--blue-soft); }
+.hcard-back2 .hcard-title { color: #fff; }
+.hcard-back2 .hline { background: rgba(255,255,255,0.1); }
+
+/* Floating badge chip */
+.hero-chip {
+  position: absolute;
+  top: 30px; right: -10px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 8px 16px;
+  border-radius: 40px;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 10;
+  box-shadow: 0 8px 20px rgba(184,147,74,0.35);
+  animation: float 5s ease-in-out infinite 0.3s;
+}
+
+.hero-chip-2 {
+  position: absolute;
+  bottom: 40px; left: -20px;
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  color: var(--navy);
+  font-weight: 500;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(26,39,68,0.1);
+  animation: float 6s ease-in-out infinite 1s;
+  display: flex; align-items: center; gap: 8px;
+}
+.chip-stars { color: #f5a623; font-size: 0.7rem; letter-spacing: 0.05em; }
+
+/* ── TICKER ──────────────────────────────────────────── */
+.ticker {
+  background: var(--navy);
+  overflow: hidden;
+  padding: 14px 0;
+  position: relative;
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.ticker-item {
+  white-space: nowrap;
+  padding: 0 48px;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  display: flex; align-items: center; gap: 16px;
+}
+.ticker-dot {
+  width: 4px; height: 4px;
+  background: var(--blue-soft);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── TRUST ───────────────────────────────────────────── */
+.trust {
+  background: var(--cream);
+  padding: 56px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-item {
+  padding: 32px 40px;
+  background: var(--cream);
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  position: relative;
+}
+.trust-item + .trust-item::before {
+  content: '';
+  position: absolute; left: 0; top: 20%; bottom: 20%;
+  width: 1px;
+  background: var(--border);
+}
+
+.trust-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.trust-suffix { font-size: 1.4rem; color: var(--blue); }
+.trust-label {
+  font-size: 0.67rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── SECTION WRAPPER ─────────────────────────────────── */
+.section { padding: 100px 56px; }
+.section-header { margin-bottom: 56px; }
+.section-header .eyebrow { margin-bottom: 14px; }
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1.15;
+}
+.section-title em { font-style: italic; color: var(--blue); }
+.section-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 460px;
+  font-weight: 300;
+  margin-top: 14px;
+}
+
+/* ── CATEGORIES ──────────────────────────────────────── */
+.categories { background: var(--warm-white); }
+
+.cat-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 56px;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+.cat-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+  display: flex; flex-direction: column;
+}
+
+.cat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(26,39,68,0.1);
+  border-color: rgba(78,133,190,0.3);
+}
+
+/* Featured large card */
+.cat-card.large {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  background: var(--navy);
+  padding: 48px 40px;
+}
+.cat-card.large:hover { box-shadow: 0 24px 56px rgba(26,39,68,0.22); }
+
+.cat-card.sky-bg { background: var(--sky-light); }
+
+.cat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+.cat-card.large .cat-num { color: rgba(255,255,255,0.3); }
+
+.cat-icon-wrap {
+  width: 44px; height: 44px;
+  background: var(--sky);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+.cat-card:hover .cat-icon-wrap { transform: scale(1.1) rotate(-5deg); }
+.cat-card.large .cat-icon-wrap { background: rgba(255,255,255,0.1); }
+
+.cat-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.cat-card.large .cat-name { color: #fff; font-size: 1.8rem; font-weight: 300; line-height: 1.15; }
+
+.cat-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 300;
+  flex: 1;
+}
+.cat-card.large .cat-desc { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-top: 8px; }
+
+.cat-link {
+  margin-top: 24px;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: gap 0.2s, color 0.2s;
+}
+.cat-card:hover .cat-link { gap: 14px; color: var(--blue); }
+.cat-card.large .cat-link { color: rgba(255,255,255,0.7); }
+.cat-card.large:hover .cat-link { color: #fff; }
+
+.cat-count {
+  position: absolute;
+  top: 28px; right: 28px;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  background: rgba(78,133,190,0.1);
+  color: var(--blue);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.cat-card.large .cat-count { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+
+/* ── FEATURED PRODUCTS ───────────────────────────────── */
+.featured { background: var(--cream); }
+
+.feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feat-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  cursor: pointer;
+  display: flex; flex-direction: column;
+}
+.feat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(26,39,68,0.1);
+  border-color: rgba(78,133,190,0.2);
+}
+
+/* Product image placeholder */
+.feat-img {
+  height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.feat-img-1 { background: linear-gradient(135deg, var(--sky) 0%, #b5d8f0 100%); }
+.feat-img-2 { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); }
+.feat-img-3 { background: linear-gradient(135deg, #f0f4f0 0%, #dde8dd 100%); }
+
+.feat-img-inner {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0.5;
+}
+.feat-img-icon { font-size: 2.2rem; }
+.feat-img-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+}
+.feat-img-2 .feat-img-label { color: rgba(255,255,255,0.7); }
+
+.feat-badge {
+  position: absolute;
+  top: 14px; left: 14px;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+.feat-badge.gold { background: var(--gold); color: var(--navy); }
+.feat-badge.navy { background: var(--navy); color: #fff; }
+.feat-badge.blue { background: var(--blue); color: #fff; }
+
+.feat-body { padding: 24px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+
+.feat-category {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.feat-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.feat-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-weight: 300;
+  flex: 1;
+}
+
+.feat-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.feat-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--navy);
+}
+
+.feat-btn {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+  border-bottom: 1px solid var(--navy);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.feat-card:hover .feat-btn { color: var(--blue); border-color: var(--blue); }
+
+.feat-cta-row {
+  text-align: center;
+  margin-top: 44px;
+}
+.feat-cta-row p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+
+/* ── WHY US ──────────────────────────────────────────── */
+.why {
+  background: var(--navy);
+  padding: 100px 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.why::before {
+  content: '&';
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.02);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.why-left .eyebrow::before { background: var(--blue-soft); }
+.why-left .eyebrow { color: var(--blue-soft); }
+
+.why-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2;
+  margin: 14px 0 48px;
+}
+.why-title em { font-style: italic; color: var(--blue-soft); }
+
+.why-points { display: flex; flex-direction: column; gap: 0; }
+
+.why-point {
+  display: flex; gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  align-items: flex-start;
+  transition: padding-left 0.25s;
+}
+.why-point:hover { padding-left: 8px; }
+.why-point:first-child { padding-top: 0; }
+.why-point:last-child { border-bottom: none; }
+
+.why-point-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: rgba(78,133,190,0.5);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 28px;
+  margin-top: 4px;
+}
+
+.why-point-body h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+.why-point-body p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.why-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.why-tile {
+  border-radius: 4px;
+  padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.why-tile-1 { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+.why-tile-2 { background: var(--blue); grid-column: 2; }
+.why-tile-3 { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); }
+.why-tile-4 { background: rgba(184,147,74,0.15); border: 1px solid rgba(184,147,74,0.2); }
+
+.why-tile-icon { font-size: 1.5rem; }
+.why-tile-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1;
+}
+.why-tile-2 .why-tile-num { color: #fff; }
+.why-tile-4 .why-tile-num { color: var(--gold-light); }
+
+.why-tile-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+}
+.why-tile-2 .why-tile-label { color: rgba(255,255,255,0.7); }
+
+/* ── REVIEWS ─────────────────────────────────────────── */
+.reviews { background: var(--warm-white); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.review-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 36px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.review-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,39,68,0.08); }
+
+.review-quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--sky);
+  line-height: 0.8;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.review-stars {
+  display: flex; gap: 3px;
+  margin-bottom: 16px;
+}
+.review-stars span { color: #f5a623; font-size: 0.85rem; }
+
+.review-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.review-author {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.review-rating-summary {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  margin-top: 48px;
+  padding: 24px 40px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  width: fit-content;
+  margin-left: auto; margin-right: auto;
+}
+.rating-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+}
+.rating-details { display: flex; flex-direction: column; gap: 4px; }
+.rating-stars { display: flex; gap: 3px; }
+.rating-stars span { color: #f5a623; font-size: 1rem; }
+.rating-count { font-size: 0.7rem; letter-spacing: 0.12em; color: var(--muted); }
+.rating-divider { width: 1px; height: 40px; background: var(--border); }
+.etsy-link-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 2px;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.etsy-link-badge:hover { background: var(--navy-mid); }
+
+/* ── FINAL CTA ───────────────────────────────────────── */
+.final-cta {
+  background: var(--sky);
+  padding: 120px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: -120px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(78,133,190,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.final-cta .eyebrow { justify-content: center; margin-bottom: 20px; }
+.final-cta .eyebrow::before { display: none; }
+
+.final-cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.final-cta h2 em { font-style: italic; color: var(--blue); }
+
+.final-cta p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 480px;
+  margin: 0 auto 44px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.final-cta-btns { display: flex; align-items: center; justify-content: center; gap: 20px; }
+
+.btn-large {
+  padding: 17px 40px;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer {
+  background: var(--navy);
+  padding: 72px 56px 40px;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 32px;
+}
+
+.footer-brand-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.footer-brand-desc {
+  font-size: 0.8rem;
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 260px;
+  margin-bottom: 24px;
+}
+
+.footer-etsy-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 18px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 2px;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  transition: all 0.2s;
+}
+.footer-etsy-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+.footer-col h5 {
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.footer-col a {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s;
+  font-weight: 300;
+}
+.footer-col a:hover { color: rgba(255,255,255,0.85); }
+
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ── SCROLL REVEALS ──────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ── RESPONSIVE BASELINE ─────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  nav .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+  .hero::before { display: none; }
+  .hero-right { display: none; }
+  .trust { grid-template-columns: repeat(2, 1fr); padding: 40px 24px; }
+  .section { padding: 72px 24px; }
+  .cat-grid { grid-template-columns: 1fr; }
+  .cat-card.large { grid-column: 1; grid-row: auto; }
+  .feat-grid { grid-template-columns: 1fr; }
+  .why { grid-template-columns: 1fr; padding: 72px 24px; gap: 48px; }
+  .why-right { display: none; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .final-cta { padding: 80px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ NAV -->
+<nav>
+  <div class="nav-logo">Chart <em>&</em> Charm</div>
+  <ul class="nav-links">
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="nav-cta">
+    Shop on Etsy
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</nav>
+
+<!-- ═══════════════════════════════ HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">
+      <div class="hero-tag-dot"></div>
+      Dental Professionals
+    </div>
+
+    <h1>
+      Beautiful tools<br>
+      for <em>brilliant</em><br>
+      <strong>dental practices</strong>
+    </h1>
+
+    <p class="hero-desc">
+      Professional printables, patient education materials, and charming office décor — crafted to elevate every dental practice. Instant digital download.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="btn-primary">
+        Shop on Etsy
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#shop" class="btn-ghost">Browse categories →</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">992</div>
+        <div class="hero-stat-label">Happy Customers</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">4.8<span style="font-size:1.2rem;color:var(--blue)">★</span></div>
+        <div class="hero-stat-label">Etsy Rating</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">97</div>
+        <div class="hero-stat-label">Products</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">4</div>
+        <div class="hero-stat-label">Years on Etsy</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-chip">★ Bestseller</div>
+    <div class="card-stack">
+      <!-- Back cards -->
+      <div class="hcard hcard-back1">
+        <div class="hcard-inner">
+          <div class="hcard-label">Patient Education</div>
+          <div class="hcard-title">Mouth is the Gateway to the Body</div>
+          <div class="hcard-lines">
+            <div class="hline"></div>
+            <div class="hline"></div>
+            <div class="hline"></div>
+            <div class="hline"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hcard hcard-back2">
+        <div class="hcard-inner">
+          <div class="hcard-label">Office Form</div>
+          <div class="hcard-title">RDH Patient Tracker</div>
+          <div class="hcard-lines">
+            <div class="hline"></div>
+            <div class="hline"></div>
+            <div class="hline"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Main card -->
+      <div class="hcard hcard-main">
+        <div class="hcard-inner">
+          <div class="hcard-label">Customizable · Instant Download</div>
+          <div class="hcard-title">Dental Referral Form</div>
+          <div style="font-size:0.75rem;color:var(--muted);font-weight:300;line-height:1.6;margin-bottom:16px;">Add your office name, logo, and contact details. Print-ready PDF.</div>
+          <div class="hcard-lines">
+            <div class="hline"></div>
+            <div class="hline"></div>
+            <div class="hline"></div>
+            <div class="hline"></div>
+          </div>
+          <div class="hcard-footer">
+            <div class="hcard-badge">Instant Download</div>
+            <div class="hcard-icon">🦷</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-chip-2">
+      <span class="chip-stars">★★★★★</span>
+      108 Reviews on Etsy
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <!-- Repeated twice for seamless loop -->
+    <div class="ticker-item"><div class="ticker-dot"></div>Instant Digital Download</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Dental Office Décor</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Patient Education Posters</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Custom Referral Forms</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Office Planners</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Dental Themed Gifts</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>4.8★ on Etsy</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Buffalo, New York</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Supporting Dental Professionals</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Instant Digital Download</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Dental Office Décor</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Patient Education Posters</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Custom Referral Forms</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Office Planners</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Dental Themed Gifts</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>4.8★ on Etsy</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Buffalo, New York</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Supporting Dental Professionals</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ TRUST BAR -->
+<div class="trust reveal">
+  <div class="trust-item">
+    <div class="trust-num">992</div>
+    <div class="trust-label">Happy Customers</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-num">4.8<span class="trust-suffix">★</span></div>
+    <div class="trust-label">Average Rating</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-num">97</div>
+    <div class="trust-label">Products Available</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-num">4</div>
+    <div class="trust-label">Years on Etsy</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ CATEGORIES -->
+<section class="section categories" id="shop">
+  <div class="cat-header reveal">
+    <div>
+      <div class="eyebrow">Browse Collections</div>
+      <h2 class="section-title" style="margin-top:14px;">Everything your practice <em>needs</em></h2>
+      <p class="section-sub">From patient-facing education to behind-the-scenes office tools — all thoughtfully designed for dental professionals.</p>
+    </div>
+    <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="btn-ghost" style="flex-shrink:0;">View all 97 items →</a>
+  </div>
+
+  <div class="cat-grid">
+    <!-- Large featured card -->
+    <div class="cat-card large reveal">
+      <div class="cat-num">Featured</div>
+      <div class="cat-icon-wrap">🎨</div>
+      <div class="cat-name">Dental Office<br>Décor</div>
+      <p class="cat-desc">Framed prints, motivational posters, and wall art that give your practice a polished, welcoming feel patients will notice.</p>
+      <a href="https://www.etsy.com/shop/ChartandCharm/section/dental-office-decor" target="_blank" class="cat-link">Shop Décor →</a>
+      <div class="cat-count">14 items</div>
+    </div>
+
+    <div class="cat-card reveal reveal-delay-1">
+      <div class="cat-num">02</div>
+      <div class="cat-icon-wrap">📚</div>
+      <div class="cat-name">Patient Education</div>
+      <p class="cat-desc">Infographics and visual aids that make complex topics easy for patients to understand — and start conversations.</p>
+      <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="cat-link">Shop Education →</a>
+      <div class="cat-count">13 items</div>
+    </div>
+
+    <div class="cat-card sky-bg reveal reveal-delay-2">
+      <div class="cat-num">03</div>
+      <div class="cat-icon-wrap">📋</div>
+      <div class="cat-name">Dental Forms</div>
+      <p class="cat-desc">Customizable referral forms, patient trackers, and clinical documents — ready to download and print today.</p>
+      <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="cat-link">Shop Forms →</a>
+      <div class="cat-count">5 items</div>
+    </div>
+
+    <div class="cat-card sky-bg reveal reveal-delay-1">
+      <div class="cat-num">04</div>
+      <div class="cat-icon-wrap">🗓</div>
+      <div class="cat-name">Office Planners</div>
+      <p class="cat-desc">Stay organized with dental-specific planners, appointment trackers, and productivity tools built for your workflow.</p>
+      <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="cat-link">Shop Planners →</a>
+      <div class="cat-count">17 items</div>
+    </div>
+
+    <div class="cat-card reveal reveal-delay-2">
+      <div class="cat-num">05</div>
+      <div class="cat-icon-wrap">🎁</div>
+      <div class="cat-name">Dental Gifts</div>
+      <p class="cat-desc">Charming, tooth-themed gifts for dentists, hygienists, and dental students — perfect for every occasion.</p>
+      <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="cat-link">Shop Gifts →</a>
+      <div class="cat-count">16 items</div>
+    </div>
+
+    <div class="cat-card reveal reveal-delay-3" style="background: var(--navy); border-color: transparent;">
+      <div class="cat-num" style="color:rgba(255,255,255,0.3)">06</div>
+      <div class="cat-icon-wrap" style="background:rgba(255,255,255,0.1)">✏️</div>
+      <div class="cat-name" style="color:#fff;">Custom Orders</div>
+      <p class="cat-desc" style="color:rgba(255,255,255,0.5);">Need your office name or logo added? We offer fully personalized versions of any product in the shop.</p>
+      <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="cat-link" style="color:rgba(255,255,255,0.6);">Request Custom →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FEATURED PRODUCTS -->
+<section class="section featured" id="featured">
+  <div class="section-header reveal">
+    <div class="eyebrow">Staff Picks</div>
+    <h2 class="section-title">Customer <em>favorites</em></h2>
+    <p class="section-sub">Our most-loved printables — tried, tested, and trusted by dental offices nationwide.</p>
+  </div>
+
+  <div class="feat-grid">
+    <div class="feat-card reveal">
+      <div class="feat-img feat-img-1">
+        <div class="feat-img-inner">
+          <div class="feat-img-icon">🦷</div>
+          <div class="feat-img-label">Product Image</div>
+        </div>
+        <div class="feat-badge gold">★ Bestseller</div>
+      </div>
+      <div class="feat-body">
+        <div class="feat-category">Patient Education · Wall Poster</div>
+        <div class="feat-name">The Mouth is the Gateway to the Body</div>
+        <p class="feat-desc">A full-color illustrated poster showing how oral health connects to whole-body wellness. Available in 6 colors and multiple sizes.</p>
+        <div class="feat-footer">
+          <div class="feat-price">From $4.99</div>
+          <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="feat-btn">View on Etsy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-card reveal reveal-delay-1">
+      <div class="feat-img feat-img-2">
+        <div class="feat-img-inner">
+          <div class="feat-img-icon">📋</div>
+          <div class="feat-img-label" style="color:rgba(255,255,255,0.5)">Product Image</div>
+        </div>
+        <div class="feat-badge navy">Instant Download</div>
+      </div>
+      <div class="feat-body">
+        <div class="feat-category">Clinical Tool · Digital Form</div>
+        <div class="feat-name">RDH Patient Tracker</div>
+        <p class="feat-desc">A comprehensive patient tracking sheet for registered dental hygienists. Print at home — date, patient info, and treatment columns included.</p>
+        <div class="feat-footer">
+          <div class="feat-price">$3.99</div>
+          <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="feat-btn">View on Etsy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-card reveal reveal-delay-2">
+      <div class="feat-img feat-img-3">
+        <div class="feat-img-inner">
+          <div class="feat-img-icon">📄</div>
+          <div class="feat-img-label">Product Image</div>
+        </div>
+        <div class="feat-badge blue">Customizable</div>
+      </div>
+      <div class="feat-body">
+        <div class="feat-category">Office Form · Personalized</div>
+        <div class="feat-name">Dental Referral Form</div>
+        <p class="feat-desc">Add your office name, logo, and contact details for a professional referral form that represents your brand. Same-day turnaround on custom orders.</p>
+        <div class="feat-footer">
+          <div class="feat-price">$5.99</div>
+          <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="feat-btn">View on Etsy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feat-cta-row reveal">
+    <p>Explore all 97 products — new items added regularly.</p>
+    <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="btn-primary btn-large">
+      Browse Full Shop on Etsy
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 19 12"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ WHY US -->
+<section class="why" id="about">
+  <div class="why-left reveal">
+    <div class="eyebrow">Why Chart & Charm</div>
+    <h2 class="why-title">Made by people who <em>know</em> dentistry</h2>
+
+    <div class="why-points">
+      <div class="why-point">
+        <div class="why-point-num">01</div>
+        <div class="why-point-body">
+          <h4>Clinically Accurate</h4>
+          <p>Every chart, form, and educational poster is reviewed for accuracy so you can confidently use it with patients and staff without second-guessing.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-point-num">02</div>
+        <div class="why-point-body">
+          <h4>Instant & Effortless</h4>
+          <p>All digital downloads are print-ready the moment you purchase. No waiting, no shipping costs — just download and print in minutes.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-point-num">03</div>
+        <div class="why-point-body">
+          <h4>Personalized for Your Office</h4>
+          <p>Many products can be customized with your office name, logo, and colors. We turn custom orders around same-day whenever possible.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-point-num">04</div>
+        <div class="why-point-body">
+          <h4>Rooted in Buffalo, NY</h4>
+          <p>A small, passionate shop — not a faceless corporation. Every product is created with care by someone who genuinely loves what they do.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-right reveal reveal-delay-1">
+    <div class="why-tile why-tile-1">
+      <div class="why-tile-icon">🦷</div>
+      <div class="why-tile-num">992</div>
+      <div class="why-tile-label">Dental Professionals Served</div>
+    </div>
+    <div class="why-tile why-tile-2">
+      <div class="why-tile-icon">⭐</div>
+      <div class="why-tile-num">4.8</div>
+      <div class="why-tile-label">Star Rating on Etsy</div>
+    </div>
+    <div class="why-tile why-tile-3">
+      <div class="why-tile-icon">📥</div>
+      <div class="why-tile-num">97</div>
+      <div class="why-tile-label">Products Ready to Download</div>
+    </div>
+    <div class="why-tile why-tile-4">
+      <div class="why-tile-icon">🗓</div>
+      <div class="why-tile-num">4</div>
+      <div class="why-tile-label">Years Supporting Dental Offices</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ REVIEWS -->
+<section class="section reviews" id="reviews">
+  <div class="section-header reveal" style="text-align:center;">
+    <div class="eyebrow" style="justify-content:center;">
+      <span>★★★★★</span> Verified Reviews
+    </div>
+    <h2 class="section-title" style="margin-top:14px;">Loved by dental professionals</h2>
+    <p class="section-sub" style="margin:14px auto 0;">Real feedback from real dental offices — straight from Etsy.</p>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <span class="review-quote-mark">"</span>
+      <div class="review-stars">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+      <p class="review-text">These posters look so professional in my waiting room. Patients ask about them all the time — it starts great conversations about oral health.</p>
+      <div class="review-author">— Verified Buyer · Dental Hygienist</div>
+    </div>
+
+    <div class="review-card reveal reveal-delay-1">
+      <span class="review-quote-mark">"</span>
+      <div class="review-stars">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+      <p class="review-text">I ordered the customized referral form and had it back the same day. Exactly what I needed and it matched our branding perfectly.</p>
+      <div class="review-author">— Verified Buyer · Dental Office Manager</div>
+    </div>
+
+    <div class="review-card reveal reveal-delay-2">
+      <span class="review-quote-mark">"</span>
+      <div class="review-stars">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+      <p class="review-text">Such a charming shop! The patient tracker has saved me so much time. I've already recommended Chart & Charm to three colleagues.</p>
+      <div class="review-author">— Verified Buyer · Registered Dental Hygienist</div>
+    </div>
+  </div>
+
+  <div class="review-rating-summary reveal">
+    <div class="rating-big">4.8</div>
+    <div class="rating-divider"></div>
+    <div class="rating-details">
+      <div class="rating-stars">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+      <div class="rating-count">108 reviews on Etsy</div>
+    </div>
+    <div class="rating-divider"></div>
+    <a href="https://www.etsy.com/shop/ChartandCharm#reviews" target="_blank" class="etsy-link-badge">
+      Read All Reviews →
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FINAL CTA -->
+<section class="final-cta">
+  <div class="eyebrow">Ready to Elevate Your Practice?</div>
+  <h2>Shop Chart <em>&</em> Charm<br>on Etsy today</h2>
+  <p>Join nearly 1,000 dental professionals who trust Chart & Charm for beautiful, clinically accurate printables. Instant download — no waiting required.</p>
+  <div class="final-cta-btns reveal">
+    <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="btn-primary btn-large">
+      Visit Our Etsy Shop
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <a href="#shop" class="btn-ghost">Browse categories</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-logo">Chart & Charm</div>
+      <p class="footer-brand-desc">Supporting dental professionals with beautiful, clinically accurate printables. Based in Buffalo, New York — serving dental offices nationwide since 2020.</p>
+      <a href="https://www.etsy.com/shop/ChartandCharm" target="_blank" class="footer-etsy-btn">
+        🛍 Shop on Etsy
+      </a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <ul>
+        <li><a href="https://www.etsy.com/shop/ChartandCharm" target="_blank">Office Décor</a></li>
+        <li><a href="https://www.etsy.com/shop/ChartandCharm" target="_blank">Patient Education</a></li>
+        <li><a href="https://www.etsy.com/shop/ChartandCharm" target="_blank">Dental Forms</a></li>
+        <li><a href="https://www.etsy.com/shop/ChartandCharm" target="_blank">Office Planners</a></li>
+        <li><a href="https://www.etsy.com/shop/ChartandCharm" target="_blank">Gifts</a></li>
+        <li><a href="https://www.etsy.com/shop/ChartandCharm" target="_blank">Custom Orders</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Pages</h5>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Info</h5>
+      <ul>
+        <li><a href="#">Buffalo, New York</a></li>
+        <li><a href="https://www.etsy.com/shop/ChartandCharm#reviews" target="_blank">108 Reviews</a></li>
+        <li><a href="https://www.etsy.com/shop/ChartandCharm/policy" target="_blank">Shop Policies</a></li>
+        <li><a href="#">Custom Order Inquiry</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Chart & Charm · All rights reserved · chartandcharm.com</span>
+    <span>Buffalo, New York · Supporting Dental Professionals</span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════ SCROLL REVEAL SCRIPT -->
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
