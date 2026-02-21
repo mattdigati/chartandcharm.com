@@ -135,24 +135,26 @@
       color: rgba(255,255,255,0.45); margin-top: 4px;
     }
 
-    /* Hero right - 2x2 grid, 4 images, no cropping */
+    /* Hero right - horizontal row of 4 vertical images */
     .hero-right {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 4px;
+      display: flex;
+      flex-direction: row;
+      gap: 3px;
       overflow: hidden;
       height: 100%;
-      background: #111d33;
+      background: #0f1a2e;
     }
     .hero-img {
-      overflow: hidden; position: relative;
-      min-height: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: #111d33;
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      min-width: 0;
     }
     .hero-img img {
-      width: 100%; height: 100%; object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
       transition: transform 0.7s ease;
       display: block;
     }
@@ -448,24 +450,30 @@
     }
 
     /* ── REVIEWS ── */
-    .reviews { background: var(--navy); }
-    .reviews-header { margin-bottom: 52px; }
-    .reviews-header .section-label { color: var(--sky); }
-    .reviews-header .section-title { color: #fff; }
-    .reviews-header .section-title em { color: var(--sky); }
+    .reviews { background: var(--navy); overflow: hidden; }
     .reviews-aggregate {
       display: flex; align-items: center; gap: 12px;
-      margin-top: 16px;
+      margin-top: 16px; margin-bottom: 52px;
     }
     .agg-stars { color: var(--gold); font-size: 18px; letter-spacing: 2px; }
     .agg-score { font-size: 15px; font-weight: 500; color: #fff; }
     .agg-count { font-size: 14px; color: rgba(255,255,255,0.45); }
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+
+    .reviews-scroll-wrap { overflow: hidden; }
+    .reviews-scroll {
+      display: flex; gap: 20px;
+      animation: reviewscroll 50s linear infinite;
+      width: max-content;
+      padding: 8px 8% 8px 0;
     }
+    .reviews-scroll:hover { animation-play-state: paused; }
+    @keyframes reviewscroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
     .review-card {
+      width: 340px; flex-shrink: 0;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.1);
       padding: 28px 24px 24px;
@@ -481,12 +489,7 @@
     }
     .review-meta { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px; }
     .review-author {
-      font-size: 13px; font-weight: 500;
-      color: #fff; margin-bottom: 3px;
-    }
-    .review-product {
-      font-size: 11px; letter-spacing: 0.08em;
-      color: var(--blue); font-weight: 500;
+      font-size: 13px; font-weight: 500; color: #fff;
     }
 
     /* ── FINAL CTA ── */
@@ -543,11 +546,8 @@
     @media (max-width: 1024px) {
       .hero { grid-template-columns: 1fr; height: auto; max-height: none; }
       .hero-left { padding: 60px 6%; }
-      .hero-right { height: 340px; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr; }
-      .hero-img:nth-child(1) { grid-column: 1; grid-row: 1; }
-      .hero-img:nth-child(2) { grid-column: 2; grid-row: 1; }
-      .hero-img:nth-child(3) { grid-column: 3; grid-row: 1; display: block; }
-      .hero-img:nth-child(n+4) { display: none; }
+      .hero-right { height: 380px; flex-direction: row; }
+      .hero-img:nth-child(n+3) { display: none; }
       .cat-grid { grid-template-columns: 1fr 1fr; }
       .cat-card:nth-child(1) { grid-column: 1; grid-row: 1; }
       .cat-card:nth-child(2) { grid-column: 2; grid-row: 1/3; }
@@ -728,48 +728,116 @@
 </section>
 
 <!-- REVIEWS - moved up, real customer reviews -->
-<section class="reviews" id="reviews">
-  <div class="reviews-header">
-    <p class="section-label">Verified Etsy Reviews</p>
-    <h2 class="section-title">What dental professionals <em>are saying</em></h2>
+<section class="reviews" id="reviews" style="padding: 100px 0;">
+  <div style="padding: 0 8%;">
+    <p class="section-label" style="color:var(--sky);">Verified Etsy Reviews</p>
+    <h2 class="section-title" style="color:#fff;">What dental professionals <em>are saying</em></h2>
     <div class="reviews-aggregate">
       <span class="agg-stars">★★★★★</span>
       <span class="agg-score">4.8 out of 5</span>
       <span class="agg-count">· 108 reviews on Etsy</span>
     </div>
   </div>
-  <div class="reviews-grid">
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"It is a great quality print, it is a very nice product, packaged with care and shipped fast. Thank you!"</p>
-      <div class="review-meta">
-        <div class="review-author">Dora</div>
-        <div class="review-product">Gum Disease Dental Print Poster</div>
+  <div class="reviews-scroll-wrap">
+    <div class="reviews-scroll">
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"It is a great quality print, a very nice product, packaged with care and shipped fast. Thank you!"</p>
+        <div class="review-meta"><div class="review-author">Dora</div></div>
       </div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"I love this poster. Its very good quality and does an excellent job simply stating what we take x-rays for and what might be missed without taking them. We bought this and several other posters from this artist and they all came excellently packed for shipping and perfectly made."</p>
-      <div class="review-meta">
-        <div class="review-author">Brittany</div>
-        <div class="review-product">Benefits of X-Rays Poster</div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I love this poster. It is very good quality and does an excellent job simply stating what we take x-rays for and what might be missed without taking them. We bought this and several other posters from this artist and they all came excellently packed and perfectly made."</p>
+        <div class="review-meta"><div class="review-author">Brittany</div></div>
       </div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Planner was super cute and the customer service was amazing! I made a mistake and the seller went above and beyond to help me, would shop here again."</p>
-      <div class="review-meta">
-        <div class="review-author">Yijing</div>
-        <div class="review-product">Dental Patient Planner</div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Planner was super cute and the customer service was amazing! I made a mistake and the seller went above and beyond to help me. Would shop here again."</p>
+        <div class="review-meta"><div class="review-author">Yijing</div></div>
       </div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Easy to download then print. Plus it is a super cute way to stay organized especially for a new grad like me! One of the other hygienists already saw it and wants to buy it too! I laminated mine and recommend buying extra fine tip dry erase markers for it. Love it!"</p>
-      <div class="review-meta">
-        <div class="review-author">Megan</div>
-        <div class="review-product">Dental Hygienist Planner</div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Easy to download then print. It is a super cute way to stay organized, especially for a new grad like me! One of the other hygienists already saw it and wants to buy it too! I laminated mine and recommend buying extra fine tip dry erase markers for it. Love it!"</p>
+        <div class="review-meta"><div class="review-author">Megan</div></div>
       </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The poster is great! The seller went above and beyond to make sure I was satisfied with the order!"</p>
+        <div class="review-meta"><div class="review-author">Ethan</div></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Elizabeth was amazing — she got my template completed without any issues, with a fast turnaround time and was so attentive to all my personalized requests. Thank you again. Highly recommend!"</p>
+        <div class="review-meta"><div class="review-author">Rocio</div></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Great quality. Elizabeth was very helpful. Highly recommended."</p>
+        <div class="review-meta"><div class="review-author">Matthew</div></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Elizabeth was so incredible to work with and ensured that she created exactly what I had envisioned. She was quick to respond to any questions I had and provided updates as she was designing what I needed. I would highly recommend working with her!"</p>
+        <div class="review-meta"><div class="review-author">Paige</div></div>
+      </div>
+
+      <!-- Duplicate set for seamless loop -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"It is a great quality print, a very nice product, packaged with care and shipped fast. Thank you!"</p>
+        <div class="review-meta"><div class="review-author">Dora</div></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I love this poster. It is very good quality and does an excellent job simply stating what we take x-rays for and what might be missed without taking them. We bought this and several other posters from this artist and they all came excellently packed and perfectly made."</p>
+        <div class="review-meta"><div class="review-author">Brittany</div></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Planner was super cute and the customer service was amazing! I made a mistake and the seller went above and beyond to help me. Would shop here again."</p>
+        <div class="review-meta"><div class="review-author">Yijing</div></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Easy to download then print. It is a super cute way to stay organized, especially for a new grad like me! One of the other hygienists already saw it and wants to buy it too! I laminated mine and recommend buying extra fine tip dry erase markers for it. Love it!"</p>
+        <div class="review-meta"><div class="review-author">Megan</div></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The poster is great! The seller went above and beyond to make sure I was satisfied with the order!"</p>
+        <div class="review-meta"><div class="review-author">Ethan</div></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Elizabeth was amazing — she got my template completed without any issues, with a fast turnaround time and was so attentive to all my personalized requests. Thank you again. Highly recommend!"</p>
+        <div class="review-meta"><div class="review-author">Rocio</div></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Great quality. Elizabeth was very helpful. Highly recommended."</p>
+        <div class="review-meta"><div class="review-author">Matthew</div></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Elizabeth was so incredible to work with and ensured that she created exactly what I had envisioned. She was quick to respond to any questions I had and provided updates as she was designing what I needed. I would highly recommend working with her!"</p>
+        <div class="review-meta"><div class="review-author">Paige</div></div>
+      </div>
+
     </div>
   </div>
 </section>
