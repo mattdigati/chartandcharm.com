@@ -139,14 +139,18 @@
     .hero-right {
       width: 100%;
       background: #ddeef9;
+      line-height: 0;
+      font-size: 0;
     }
     .hero-img {
       width: 100%;
+      line-height: 0;
     }
     .hero-img img {
       width: 100%;
       height: auto;
       display: block;
+      line-height: 0;
     }
     .hero-img:nth-child(n+2) { display: none; }
 
@@ -546,7 +550,7 @@
     @media (max-width: 1024px) {
       .hero { grid-template-columns: 1fr; height: auto; max-height: none; }
       .hero-left { padding: 60px 6%; }
-      .hero-right { height: auto; min-height: 260px; }
+      .hero-right { height: auto; }
       .cat-grid { grid-template-columns: 1fr 1fr; }
       .cat-card:nth-child(1) { grid-column: 1; grid-row: 1; }
       .cat-card:nth-child(2) { grid-column: 2; grid-row: 1/3; }
